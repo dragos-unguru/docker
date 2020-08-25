@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "CheckEmail",
+    "entityId" : "270cc038-b4f6-49ef-be1b-c34de5fb0d00",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "270cc038-b4f6-49ef-be1b-c34de5fb0d00",
+    "outcomes" : [ "found", "not_found" ],
+    "_type" : {
+      "_id" : "CheckEmail",
+      "name" : "Check Email",
+      "collection" : true
+    }
+  }
+}

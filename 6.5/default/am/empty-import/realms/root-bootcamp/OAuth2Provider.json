@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/bootcamp",
-    "amsterVersion" : "6.5.2.3",
+    "amsterVersion" : "6.5.2",
     "entityType" : "OAuth2Provider",
     "entityId" : "OAuth2Provider",
     "pathParams" : { }
@@ -16,25 +16,26 @@
       "issueRefreshTokenOnRefreshedToken" : true,
       "issueRefreshToken" : true,
       "accessTokenModificationScript" : "d22f9a0c-426a-4466-b95e-d0f125b0d5fa",
-      "statelessTokensEnabled" : false
+      "statelessTokensEnabled" : true
     },
     "coreOIDCConfig" : {
       "supportedIDTokenEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "jwtTokenLifetime" : 3600,
-      "supportedClaims" : [ "phone_number|Phone number", "family_name|Family name", "given_name|Given name", "locale|Locale", "email|Email address", "profile|Your personal information", "zoneinfo|Time zone", "address|Postal address", "name|Full name" ],
+      "supportedClaims" : [ ],
       "supportedIDTokenEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "RSA1_5", "dir", "A192KW" ],
       "supportedIDTokenSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
       "oidcClaimsScript" : "36863ffb-40ec-48b9-94b1-9a99f71cc3b5"
     },
     "advancedOAuth2Config" : {
-      "supportedScopes" : [ "^internalEmployeeNumber", "email|Your email address", "openid|", "address|Your postal address", "phone|Your telephone number(s)", "profile|Your personal information" ],
+      "supportedScopes" : [ "openid" ],
       "codeVerifierEnforced" : "false",
       "tokenSigningAlgorithm" : "HS256",
       "authenticationAttributes" : [ "uid" ],
       "passwordGrantAuthService" : "[Empty]",
-      "defaultScopes" : [ "address", "phone", "openid", "profile", "email" ],
+      "defaultScopes" : [ "^internalEmpoyee:" ],
+      "tlsClientCertificateTrustedHeader" : "ssl-am-client-cert",
       "scopeImplementationClass" : "org.forgerock.openam.scope.CustomScopeValidator",
-      "responseTypeClasses" : [ "code|org.forgerock.oauth2.core.AuthorizationCodeResponseTypeHandler", "id_token|org.forgerock.openidconnect.IdTokenResponseTypeHandler", "device_code|org.forgerock.oauth2.core.TokenResponseTypeHandler", "token|org.forgerock.oauth2.core.TokenResponseTypeHandler", "none|org.forgerock.oauth2.core.NoneResponseTypeHandler" ],
+      "responseTypeClasses" : [ "code|org.forgerock.oauth2.core.AuthorizationCodeResponseTypeHandler", "device_code|org.forgerock.oauth2.core.TokenResponseTypeHandler", "token|org.forgerock.oauth2.core.TokenResponseTypeHandler" ],
       "tlsCertificateBoundAccessTokensEnabled" : true,
       "moduleMessageEnabledInPasswordGrant" : false,
       "tokenEncryptionEnabled" : false,
@@ -47,10 +48,10 @@
       "storeOpsTokens" : true,
       "defaultACR" : [ ],
       "supportedRequestParameterEncryptionEnc" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
-      "claimsParameterSupported" : false,
+      "claimsParameterSupported" : true,
       "amrMappings" : { },
       "supportedUserInfoEncryptionEnc" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
-      "alwaysAddClaimsToToken" : false,
+      "alwaysAddClaimsToToken" : true,
       "supportedUserInfoSigningAlgorithms" : [ "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512" ],
       "supportedRequestParameterEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "RSA1_5", "dir", "A192KW" ],
       "authorisedOpenIdConnectSSOClients" : [ ],
@@ -65,7 +66,7 @@
       "dynamicClientRegistrationScope" : "dynamic_client_registration",
       "requiredSoftwareStatementAttestedAttributes" : [ "redirect_uris" ],
       "generateRegistrationAccessTokens" : true,
-      "allowDynamicRegistration" : false
+      "allowDynamicRegistration" : true
     },
     "cibaConfig" : {
       "supportedCibaSigningAlgorithms" : [ "ES256", "PS256" ],

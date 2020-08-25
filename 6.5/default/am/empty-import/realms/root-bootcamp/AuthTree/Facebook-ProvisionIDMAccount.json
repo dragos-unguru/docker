@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/bootcamp",
-    "amsterVersion" : "6.5.2.3",
+    "amsterVersion" : "6.5.2",
     "entityType" : "AuthTree",
     "entityId" : "Facebook-ProvisionIDMAccount",
     "pathParams" : { }
@@ -9,15 +9,15 @@
   "data" : {
     "_id" : "Facebook-ProvisionIDMAccount",
     "nodes" : {
-      "a432fca2-4df7-459b-828e-6f49a70185c5" : {
+      "19fb1310-cdcc-4c9c-b722-3a295a4db8f5" : {
         "displayName" : "Facebook Social Authentication",
         "nodeType" : "SocialFacebookNode",
         "connections" : {
-          "NO_ACCOUNT" : "17cc3ce8-ff58-4054-96da-e0595b1b665d",
+          "NO_ACCOUNT" : "2af3c0a2-0ef0-4b13-ae77-64d9ecd2d688",
           "ACCOUNT_EXISTS" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
         }
       },
-      "17cc3ce8-ff58-4054-96da-e0595b1b665d" : {
+      "2af3c0a2-0ef0-4b13-ae77-64d9ecd2d688" : {
         "displayName" : "Provision IDM Account",
         "nodeType" : "ProvisionIdmAccountNode",
         "connections" : {
@@ -25,6 +25,6 @@
         }
       }
     },
-    "entryNodeId" : "a432fca2-4df7-459b-828e-6f49a70185c5"
+    "entryNodeId" : "19fb1310-cdcc-4c9c-b722-3a295a4db8f5"
   }
 }

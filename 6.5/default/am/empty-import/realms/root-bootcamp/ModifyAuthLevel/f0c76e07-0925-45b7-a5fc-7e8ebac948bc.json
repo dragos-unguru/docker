@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "ModifyAuthLevel",
+    "entityId" : "f0c76e07-0925-45b7-a5fc-7e8ebac948bc",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "f0c76e07-0925-45b7-a5fc-7e8ebac948bc",
+    "authLevelIncrement" : 2,
+    "_type" : {
+      "_id" : "ModifyAuthLevelNode",
+      "name" : "Modify Auth Level",
+      "collection" : true
+    }
+  }
+}

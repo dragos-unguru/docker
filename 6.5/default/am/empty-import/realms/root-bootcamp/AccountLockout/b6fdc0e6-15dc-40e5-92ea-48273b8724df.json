@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "AccountLockout",
+    "entityId" : "b6fdc0e6-15dc-40e5-92ea-48273b8724df",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "b6fdc0e6-15dc-40e5-92ea-48273b8724df",
+    "lockAction" : "LOCK",
+    "_type" : {
+      "_id" : "AccountLockoutNode",
+      "name" : "Account Lockout",
+      "collection" : true
+    }
+  }
+}

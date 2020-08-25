@@ -1,0 +1,38 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "AuthTree",
+    "entityId" : "AuthOTP",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "AuthOTP",
+    "nodes" : {
+      "4cb74e82-f736-4b88-9c0e-c9124b5c8977" : {
+        "displayName" : "Page Node",
+        "nodeType" : "PageNode",
+        "connections" : {
+          "outcome" : "270cc038-b4f6-49ef-be1b-c34de5fb0d00"
+        }
+      },
+      "270cc038-b4f6-49ef-be1b-c34de5fb0d00" : {
+        "displayName" : "Check Email ",
+        "nodeType" : "CheckEmail",
+        "connections" : {
+          "found" : "3de0b270-6659-4cd5-96d0-2e5011ec74a1",
+          "not_found" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "3de0b270-6659-4cd5-96d0-2e5011ec74a1" : {
+        "displayName" : "Check Phone Number",
+        "nodeType" : "CheckPhoneNumber",
+        "connections" : {
+          "not_found" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "found" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        }
+      }
+    },
+    "entryNodeId" : "4cb74e82-f736-4b88-9c0e-c9124b5c8977"
+  }
+}

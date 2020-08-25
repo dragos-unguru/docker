@@ -1,0 +1,90 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "AuthTree",
+    "entityId" : "testNode",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "testNode",
+    "nodes" : {
+      "f52072d7-cabe-4083-8a9b-757dc1a59521" : {
+        "displayName" : "Page Node",
+        "nodeType" : "PageNode",
+        "connections" : {
+          "outcome" : "50ffaa0e-caf9-4a99-a4f2-7950a343cbd5"
+        }
+      },
+      "50ffaa0e-caf9-4a99-a4f2-7950a343cbd5" : {
+        "displayName" : "Check Email",
+        "nodeType" : "CheckEmail",
+        "connections" : {
+          "found" : "41ee5260-c0a8-4725-9e27-becfc55f487b",
+          "not_found" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "41ee5260-c0a8-4725-9e27-becfc55f487b" : {
+        "displayName" : "Check Phone Number",
+        "nodeType" : "CheckPhoneNumber",
+        "connections" : {
+          "not_found" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "found" : "1a552135-8a4b-467e-b4c7-8903e65a2c1e"
+        }
+      },
+      "f0c76e07-0925-45b7-a5fc-7e8ebac948bc" : {
+        "displayName" : "Modify Auth Level",
+        "nodeType" : "ModifyAuthLevelNode",
+        "connections" : {
+          "outcome" : "aae051c5-9a90-41b3-92d0-3d20acebd42c"
+        }
+      },
+      "1a552135-8a4b-467e-b4c7-8903e65a2c1e" : {
+        "displayName" : "HOTP Generator",
+        "nodeType" : "OneTimePasswordGeneratorNode",
+        "connections" : {
+          "outcome" : "942a6980-4dc5-4a70-a0c2-c84369dcfb6a"
+        }
+      },
+      "942a6980-4dc5-4a70-a0c2-c84369dcfb6a" : {
+        "displayName" : "OTP Email Sender",
+        "nodeType" : "OneTimePasswordSmtpSenderNode",
+        "connections" : {
+          "outcome" : "bd4fd851-ea58-493c-8c98-0816949e46ce"
+        }
+      },
+      "bd4fd851-ea58-493c-8c98-0816949e46ce" : {
+        "displayName" : "OTP Collector Decision",
+        "nodeType" : "OneTimePasswordCollectorDecisionNode",
+        "connections" : {
+          "true" : "63d0bd63-0e78-43e5-8066-c32cc911bafd",
+          "false" : "6cdb0b28-df0a-4438-8850-da0857f4e2bb"
+        }
+      },
+      "63d0bd63-0e78-43e5-8066-c32cc911bafd" : {
+        "displayName" : "Show Attributes",
+        "nodeType" : "ShowAttributes",
+        "connections" : {
+          "yes" : "f0c76e07-0925-45b7-a5fc-7e8ebac948bc",
+          "no" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "6cdb0b28-df0a-4438-8850-da0857f4e2bb" : {
+        "displayName" : "Retry Limit Decision",
+        "nodeType" : "RetryLimitDecisionNode",
+        "connections" : {
+          "Retry" : "bd4fd851-ea58-493c-8c98-0816949e46ce",
+          "Reject" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "aae051c5-9a90-41b3-92d0-3d20acebd42c" : {
+        "displayName" : "HTTP Request",
+        "nodeType" : "HttpRequest",
+        "connections" : {
+          "true" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        }
+      }
+    },
+    "entryNodeId" : "f52072d7-cabe-4083-8a9b-757dc1a59521"
+  }
+}
