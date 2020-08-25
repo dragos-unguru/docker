@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2.3",
+    "entityType" : "SetPersistentCookie",
+    "entityId" : "8e2e37d9-97cb-436c-b10f-02c8d8d27eb3",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "8e2e37d9-97cb-436c-b10f-02c8d8d27eb3",
+    "useHttpOnlyCookie" : true,
+    "hmacSigningKey" : null,
+    "idleTimeout" : 5,
+    "useSecureCookie" : false,
+    "maxLife" : 5,
+    "persistentCookieName" : "session-jwt",
+    "_type" : {
+      "_id" : "SetPersistentCookieNode",
+      "name" : "Set Persistent Cookie",
+      "collection" : true
+    }
+  }
+}

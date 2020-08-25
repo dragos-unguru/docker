@@ -1,0 +1,45 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2.3",
+    "entityType" : "AuthTree",
+    "entityId" : "Example",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "Example",
+    "nodes" : {
+      "f0ad342c-b3d2-4b4d-bfe3-ba3b41295bd8" : {
+        "displayName" : "User Name Collector",
+        "nodeType" : "UsernameCollectorNode",
+        "connections" : {
+          "outcome" : "00fbb6a4-80e5-453d-ab8c-0e8bc7befd79"
+        }
+      },
+      "00fbb6a4-80e5-453d-ab8c-0e8bc7befd79" : {
+        "displayName" : "Password Collector",
+        "nodeType" : "PasswordCollectorNode",
+        "connections" : {
+          "outcome" : "e2781a53-19af-4aa3-afcf-d4d8510e7a8e"
+        }
+      },
+      "e2781a53-19af-4aa3-afcf-d4d8510e7a8e" : {
+        "displayName" : "Data Store Decision",
+        "nodeType" : "DataStoreDecisionNode",
+        "connections" : {
+          "true" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "8b0d989f-8339-40e8-b37c-ba49d069a544" : {
+        "displayName" : "Zero Page Login Collector",
+        "nodeType" : "ZeroPageLoginNode",
+        "connections" : {
+          "true" : "e2781a53-19af-4aa3-afcf-d4d8510e7a8e",
+          "false" : "f0ad342c-b3d2-4b4d-bfe3-ba3b41295bd8"
+        }
+      }
+    },
+    "entryNodeId" : "8b0d989f-8339-40e8-b37c-ba49d069a544"
+  }
+}

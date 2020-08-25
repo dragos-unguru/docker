@@ -1,0 +1,52 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2.3",
+    "entityType" : "AuthTree",
+    "entityId" : "PersistentCookie",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "PersistentCookie",
+    "nodes" : {
+      "18b59d6b-7cb6-4e8e-8c9d-8d9a69688eaa" : {
+        "displayName" : "User Name Collector",
+        "nodeType" : "UsernameCollectorNode",
+        "connections" : {
+          "outcome" : "2fad596d-1232-44ec-88e4-d8f3257a57d3"
+        }
+      },
+      "2fad596d-1232-44ec-88e4-d8f3257a57d3" : {
+        "displayName" : "Password Collector",
+        "nodeType" : "PasswordCollectorNode",
+        "connections" : {
+          "outcome" : "7cbb9a19-fa1d-4d6e-8841-49ab74d1a13f"
+        }
+      },
+      "7cbb9a19-fa1d-4d6e-8841-49ab74d1a13f" : {
+        "displayName" : "Data Store Decision",
+        "nodeType" : "DataStoreDecisionNode",
+        "connections" : {
+          "true" : "8e2e37d9-97cb-436c-b10f-02c8d8d27eb3",
+          "false" : "18b59d6b-7cb6-4e8e-8c9d-8d9a69688eaa"
+        }
+      },
+      "6e9e2f30-4671-4524-ad83-c4da580bea4a" : {
+        "displayName" : "Persistent Cookie Decision",
+        "nodeType" : "PersistentCookieDecisionNode",
+        "connections" : {
+          "true" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false" : "18b59d6b-7cb6-4e8e-8c9d-8d9a69688eaa"
+        }
+      },
+      "8e2e37d9-97cb-436c-b10f-02c8d8d27eb3" : {
+        "displayName" : "Set Persistent Cookie",
+        "nodeType" : "SetPersistentCookieNode",
+        "connections" : {
+          "outcome" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        }
+      }
+    },
+    "entryNodeId" : "6e9e2f30-4671-4524-ad83-c4da580bea4a"
+  }
+}

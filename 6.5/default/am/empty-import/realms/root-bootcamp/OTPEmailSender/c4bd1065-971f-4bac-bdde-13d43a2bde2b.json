@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2.3",
+    "entityType" : "OTPEmailSender",
+    "entityId" : "c4bd1065-971f-4bac-bdde-13d43a2bde2b",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "c4bd1065-971f-4bac-bdde-13d43a2bde2b",
+    "hostName" : "mail.example.com",
+    "password" : null,
+    "sslOption" : "SSL",
+    "hostPort" : 25,
+    "emailAttribute" : "mail",
+    "smsGatewayImplementationClass" : "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "fromEmailAddress" : "admin@example.com",
+    "username" : "admin@example.com",
+    "_type" : {
+      "_id" : "OneTimePasswordSmtpSenderNode",
+      "name" : "OTP Email Sender",
+      "collection" : true
+    }
+  }
+}

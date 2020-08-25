@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2.3",
+    "entityType" : "AgentDataStoreDecision",
+    "entityId" : "11d2e01c-d29d-40a6-9933-d5843512c949",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "11d2e01c-d29d-40a6-9933-d5843512c949",
+    "_type" : {
+      "_id" : "AgentDataStoreDecisionNode",
+      "name" : "Agent Data Store Decision",
+      "collection" : true
+    }
+  }
+}

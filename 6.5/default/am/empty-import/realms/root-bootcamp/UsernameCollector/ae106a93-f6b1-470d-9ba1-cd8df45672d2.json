@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2.3",
+    "entityType" : "UsernameCollector",
+    "entityId" : "ae106a93-f6b1-470d-9ba1-cd8df45672d2",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "ae106a93-f6b1-470d-9ba1-cd8df45672d2",
+    "_type" : {
+      "_id" : "UsernameCollectorNode",
+      "name" : "Username Collector",
+      "collection" : true
+    }
+  }
+}

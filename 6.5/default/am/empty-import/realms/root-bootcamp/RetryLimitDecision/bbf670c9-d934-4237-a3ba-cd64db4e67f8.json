@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2.3",
+    "entityType" : "RetryLimitDecision",
+    "entityId" : "bbf670c9-d934-4237-a3ba-cd64db4e67f8",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "bbf670c9-d934-4237-a3ba-cd64db4e67f8",
+    "retryLimit" : 3,
+    "_type" : {
+      "_id" : "RetryLimitDecisionNode",
+      "name" : "Retry Limit Decision",
+      "collection" : true
+    }
+  }
+}
