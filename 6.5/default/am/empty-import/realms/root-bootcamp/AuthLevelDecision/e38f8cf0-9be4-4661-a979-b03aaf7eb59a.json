@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "AuthLevelDecision",
+    "entityId" : "e38f8cf0-9be4-4661-a979-b03aaf7eb59a",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "e38f8cf0-9be4-4661-a979-b03aaf7eb59a",
+    "authLevelRequirement" : 2,
+    "_type" : {
+      "_id" : "AuthLevelDecisionNode",
+      "name" : "Auth Level Decision",
+      "collection" : true
+    }
+  }
+}

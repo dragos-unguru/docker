@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "AuthTree",
+    "entityId" : "myTreev2",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "myTreev2",
+    "nodes" : {
+      "46494889-cfe1-469b-a655-44dd05b9e09e" : {
+        "displayName" : "ArchetypeNode",
+        "nodeType" : "ArchetypeNode",
+        "connections" : {
+          "true" : "b0184bf8-7144-4651-bd75-ec3b7fefde87",
+          "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "b0184bf8-7144-4651-bd75-ec3b7fefde87" : {
+        "displayName" : "Data Store Decision",
+        "nodeType" : "DataStoreDecisionNode",
+        "connections" : {
+          "false" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        }
+      }
+    },
+    "entryNodeId" : "46494889-cfe1-469b-a655-44dd05b9e09e"
+  }
+}

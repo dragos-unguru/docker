@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "PasswordCollector",
+    "entityId" : "2fad596d-1232-44ec-88e4-d8f3257a57d3",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "2fad596d-1232-44ec-88e4-d8f3257a57d3",
+    "_type" : {
+      "_id" : "PasswordCollectorNode",
+      "name" : "Password Collector",
+      "collection" : true
+    }
+  }
+}

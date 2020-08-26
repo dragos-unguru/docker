@@ -1,0 +1,91 @@
+{
+  "metadata" : {
+    "realm" : "/bootcamp",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "AuthTree",
+    "entityId" : "exercitiu",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "exercitiu",
+    "nodes" : {
+      "24604f83-5a45-4da0-ac8f-bf1bf5f8056c" : {
+        "displayName" : "Page Node",
+        "nodeType" : "PageNode",
+        "connections" : {
+          "outcome" : "35453549-cb45-4826-8621-a40bfb29e3c7"
+        }
+      },
+      "35453549-cb45-4826-8621-a40bfb29e3c7" : {
+        "displayName" : "Check Email",
+        "nodeType" : "CheckEmail",
+        "connections" : {
+          "found" : "62564a10-7dd9-44a2-a497-000e342694e9",
+          "not_found" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "62564a10-7dd9-44a2-a497-000e342694e9" : {
+        "displayName" : "Check Phone Number",
+        "nodeType" : "CheckPhoneNumber",
+        "connections" : {
+          "found" : "8e5b7cac-e847-4d0f-af39-4ebb0dcb8cee",
+          "not_found" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "8e5b7cac-e847-4d0f-af39-4ebb0dcb8cee" : {
+        "displayName" : "HOTP Generator",
+        "nodeType" : "OneTimePasswordGeneratorNode",
+        "connections" : {
+          "outcome" : "b71a9d25-7f24-4c94-8ba0-8356e5d544d2"
+        }
+      },
+      "b71a9d25-7f24-4c94-8ba0-8356e5d544d2" : {
+        "displayName" : "OTP Email Sender",
+        "nodeType" : "OneTimePasswordSmtpSenderNode",
+        "connections" : {
+          "outcome" : "79889672-2f62-43ae-864c-69610ff1397a"
+        }
+      },
+      "79889672-2f62-43ae-864c-69610ff1397a" : {
+        "displayName" : "OTP Collector Decision",
+        "nodeType" : "OneTimePasswordCollectorDecisionNode",
+        "connections" : {
+          "false" : "e91ffe48-8fe8-45b1-94bb-49ac50c025ae",
+          "true" : "eb71c5ff-6b01-43b8-ab1f-ec141ae46d89"
+        }
+      },
+      "e91ffe48-8fe8-45b1-94bb-49ac50c025ae" : {
+        "displayName" : "Retry Limit Decision",
+        "nodeType" : "RetryLimitDecisionNode",
+        "connections" : {
+          "Retry" : "8e5b7cac-e847-4d0f-af39-4ebb0dcb8cee",
+          "Reject" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "eb71c5ff-6b01-43b8-ab1f-ec141ae46d89" : {
+        "displayName" : "Show Attributes",
+        "nodeType" : "ShowAttributes",
+        "connections" : {
+          "yes" : "e38f8cf0-9be4-4661-a979-b03aaf7eb59a",
+          "no" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "e38f8cf0-9be4-4661-a979-b03aaf7eb59a" : {
+        "displayName" : "Auth Level Decision",
+        "nodeType" : "AuthLevelDecisionNode",
+        "connections" : {
+          "true" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false" : "8d98c7cd-9242-45d0-8f8c-800fcfa7f90a"
+        }
+      },
+      "8d98c7cd-9242-45d0-8f8c-800fcfa7f90a" : {
+        "displayName" : "Modify Auth Level",
+        "nodeType" : "ModifyAuthLevelNode",
+        "connections" : {
+          "outcome" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        }
+      }
+    },
+    "entryNodeId" : "24604f83-5a45-4da0-ac8f-bf1bf5f8056c"
+  }
+}

@@ -9,21 +9,21 @@
   "data" : {
     "_id" : "Example",
     "nodes" : {
-      "f643e6bc-029c-4534-b512-7e1ac57f11ae" : {
+      "f0ad342c-b3d2-4b4d-bfe3-ba3b41295bd8" : {
         "displayName" : "User Name Collector",
         "nodeType" : "UsernameCollectorNode",
         "connections" : {
-          "outcome" : "eb70e92d-922d-47be-b2fe-cb179cc273a9"
+          "outcome" : "00fbb6a4-80e5-453d-ab8c-0e8bc7befd79"
         }
       },
-      "eb70e92d-922d-47be-b2fe-cb179cc273a9" : {
+      "00fbb6a4-80e5-453d-ab8c-0e8bc7befd79" : {
         "displayName" : "Password Collector",
         "nodeType" : "PasswordCollectorNode",
         "connections" : {
-          "outcome" : "4a22780d-cfe8-471f-99f7-c379975a120f"
+          "outcome" : "e2781a53-19af-4aa3-afcf-d4d8510e7a8e"
         }
       },
-      "4a22780d-cfe8-471f-99f7-c379975a120f" : {
+      "e2781a53-19af-4aa3-afcf-d4d8510e7a8e" : {
         "displayName" : "Data Store Decision",
         "nodeType" : "DataStoreDecisionNode",
         "connections" : {
@@ -31,15 +31,15 @@
           "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "bcf96985-c31b-4a02-837f-3ddb4daafc67" : {
+      "8b0d989f-8339-40e8-b37c-ba49d069a544" : {
         "displayName" : "Zero Page Login Collector",
         "nodeType" : "ZeroPageLoginNode",
         "connections" : {
-          "true" : "4a22780d-cfe8-471f-99f7-c379975a120f",
-          "false" : "f643e6bc-029c-4534-b512-7e1ac57f11ae"
+          "true" : "e2781a53-19af-4aa3-afcf-d4d8510e7a8e",
+          "false" : "f0ad342c-b3d2-4b4d-bfe3-ba3b41295bd8"
         }
       }
     },
-    "entryNodeId" : "bcf96985-c31b-4a02-837f-3ddb4daafc67"
+    "entryNodeId" : "8b0d989f-8339-40e8-b37c-ba49d069a544"
   }
 }
