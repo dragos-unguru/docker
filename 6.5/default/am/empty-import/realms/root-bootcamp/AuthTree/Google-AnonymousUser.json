@@ -9,29 +9,29 @@
   "data" : {
     "_id" : "Google-AnonymousUser",
     "nodes" : {
-      "67f891df-1fba-4df4-9c8f-1f5353bc37e5" : {
+      "3320e0b0-592f-4888-998f-899733e7c98b" : {
         "displayName" : "Map to Anonymous User",
         "nodeType" : "AnonymousUserNode",
         "connections" : {
-          "outcome" : "d3cacef6-8b6c-40d8-9b6f-2cd012f10392"
+          "outcome" : "f5fc9120-0caf-423c-a4e0-71470a4d24bb"
         }
       },
-      "d3cacef6-8b6c-40d8-9b6f-2cd012f10392" : {
+      "f5fc9120-0caf-423c-a4e0-71470a4d24bb" : {
         "displayName" : "Set Success URL",
         "nodeType" : "SetSuccessUrlNode",
         "connections" : {
           "outcome" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
         }
       },
-      "4f6d4aa1-2009-417f-ae95-1c130d6917c5" : {
+      "d7ea6916-8a35-48fd-9982-d1c4042d0ac9" : {
         "displayName" : "Google Social Authentication",
         "nodeType" : "SocialGoogleNode",
         "connections" : {
-          "NO_ACCOUNT" : "67f891df-1fba-4df4-9c8f-1f5353bc37e5",
+          "NO_ACCOUNT" : "3320e0b0-592f-4888-998f-899733e7c98b",
           "ACCOUNT_EXISTS" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
         }
       }
     },
-    "entryNodeId" : "4f6d4aa1-2009-417f-ae95-1c130d6917c5"
+    "entryNodeId" : "d7ea6916-8a35-48fd-9982-d1c4042d0ac9"
   }
 }

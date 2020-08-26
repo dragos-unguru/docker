@@ -10,7 +10,7 @@
     "_id" : "Amster",
     "authenticationLevel" : 0,
     "enabled" : true,
-    "authorizedKeys" : "C:/Users/user1/openam/authorized_keys",
+    "authorizedKeys" : "/home/luca/openam/authorized_keys",
     "_type" : {
       "_id" : "amster",
       "name" : "ForgeRock Amster",

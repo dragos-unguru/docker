@@ -9,15 +9,15 @@
   "data" : {
     "_id" : "Facebook-ProvisionIDMAccount",
     "nodes" : {
-      "19fb1310-cdcc-4c9c-b722-3a295a4db8f5" : {
+      "e60ba563-00ab-49bf-bca7-6c8b60f36aeb" : {
         "displayName" : "Facebook Social Authentication",
         "nodeType" : "SocialFacebookNode",
         "connections" : {
-          "NO_ACCOUNT" : "2af3c0a2-0ef0-4b13-ae77-64d9ecd2d688",
+          "NO_ACCOUNT" : "66048469-d3c9-489b-8ab8-c7cb84d8ffbe",
           "ACCOUNT_EXISTS" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
         }
       },
-      "2af3c0a2-0ef0-4b13-ae77-64d9ecd2d688" : {
+      "66048469-d3c9-489b-8ab8-c7cb84d8ffbe" : {
         "displayName" : "Provision IDM Account",
         "nodeType" : "ProvisionIdmAccountNode",
         "connections" : {
@@ -25,6 +25,6 @@
         }
       }
     },
-    "entryNodeId" : "19fb1310-cdcc-4c9c-b722-3a295a4db8f5"
+    "entryNodeId" : "e60ba563-00ab-49bf-bca7-6c8b60f36aeb"
   }
 }
