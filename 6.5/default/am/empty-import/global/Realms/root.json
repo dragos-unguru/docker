@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "localhost", "openam" ]
+    "aliases" : [ "localhost", "openam", "login.bootcamp.example.com" ]
   }
 }
