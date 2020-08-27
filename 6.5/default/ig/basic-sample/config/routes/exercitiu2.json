@@ -1,0 +1,56 @@
+{
+    "name": "exercitiuBNR",
+    "condition": "${matches(request.uri.path, '(/cursValutar)')}",
+    "baseURI": "http://localhost:9191",
+    "capture": [
+      "response",
+      "request"
+    ],
+    "handler": "Chain",
+    "heap": [
+      {
+        "name": "Chain",
+        "type": "Chain",
+        "config": {
+          "filters": [ "BNRExchange" ],
+          "handler": "StaticResponseHandler"
+        }
+      },{
+        "name" : "BNRExchange",
+        "type" : "BNRExchange"
+      }, {
+        "name": "capture",
+        "type": "CaptureDecorator",
+        "config": {
+          "captureEntity": true,
+          "captureContext": true
+        }
+      },
+      {
+        "name": "ForgeRockClientHandler",
+        "type": "Chain",
+        "config": {
+          "filters": [
+            "TransactionIdOutboundFilter"
+          ],
+          "handler": "ClientHandler"
+        },
+        "capture": [
+          "response",
+          "request"
+        ]
+      }, {
+          "name": "StaticResponseHandler",
+          "type": "StaticResponseHandler",
+          "config": {
+            "status": 200,
+            "reason": "OK",
+            "version": "HTTP/1.1",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+                "entity": "EUR: ${attributes.eur} USD: ${attributes.usd}"
+          }
+      }
+    ]
+}

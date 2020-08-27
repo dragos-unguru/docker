@@ -1,0 +1,111 @@
+{
+  "name" : "testChannel",
+  "baseURI" : "http://localhost:9190",
+  "condition" : "${matches(request.uri.path,'/home')}",
+  "capture" : [ "response", "request" ],
+  "heap" : [ {
+    "name" : "AmService-Demo",
+    "type" : "AmService",
+    "config" : {
+      "url" : "http://localhost:8010/openam",
+      "realm" : "bootcamp",
+      "ssoTokenHeader" : "iPlanetDirectoryPro",
+      "version" : "6.5",
+      "agent" : {
+        "username" : "openig-agent",
+        "password" : "12345678"
+      },
+      "sessionCache" : {
+        "enabled" : false
+      }
+    }
+  }, {
+    "name" : "Chain",
+    "type" : "Chain",
+    "config" : {
+      "filters" : [ "HeaderFilter-AddResponseHeaders", "UserValidator", "OAuth2ResourceServerFilter-demo", "PolicyEnforcementFilter-Demo" ],
+      "handler" : "ReverseProxyHandler"
+    }
+  }, {
+    "name" : "HeaderFilter-AddResponseHeaders",
+    "type" : "HeaderFilter",
+    "config" : {
+      "messageType" : "RESPONSE",
+      "remove" : [ "Content-Type" ],
+      "add" : {
+        "Content-Type" : [ "application/json" ]
+      }
+    }
+  }, {
+    "name" : "OAuth2ResourceServerFilter-demo",
+    "type" : "OAuth2ResourceServerFilter",
+    "config" : {
+      "scopes" : [ "openid", "customerId:user.80" ],
+      "requireHttps" : false,
+      "realm" : "bootcamp",
+      "cache" : {
+        "enabled" : true,
+        "defaultTimeout" : "1 minute",
+        "maxTimeout" : "2 minutes"
+      },
+      "accessTokenResolver" : {
+        "name" : "token-resolver-1",
+        "type" : "TokenIntrospectionAccessTokenResolver",
+        "config" : {
+          "endpoint" : "http://localhost:8010/openam/oauth2/realms/root/realms/bootcamp/introspect",
+          "providerHandler" : {
+            "type" : "Chain",
+            "config" : {
+              "filters" : [ {
+                "type" : "HeaderFilter",
+                "config" : {
+                  "messageType" : "request",
+                  "add" : {
+                    "Authorization" : [ "Basic ${encodeBase64('oauth-client:12345678')}" ]
+                  }
+                }
+              } ],
+              "handler" : "ForgeRockClientHandler"
+            }
+          }
+        }
+      }
+    }
+  }, {
+    "name" : "UserValidator",
+    "type" : "UserValidator",
+    "config" : {
+      "scopes" : "${contexts.oauth2.accessToken.info.scope}"
+    }
+  }, {
+    "name" : "PolicyEnforcementFilter-Demo",
+    "type" : "PolicyEnforcementFilter",
+    "config" : {
+      "pepRealm" : "bootcamp",
+      "application" : "demo",
+      "claimsSubject" : {
+        "sub" : "${contexts.oauth2.accessToken.info.sub}",
+        "role" : "${attributes.ipAddress}",
+        "iss" : "http://localhost:8010/openam/oauth2/realms/root/realms/bootcamp"
+      },
+      "amService" : "AmService-Demo"
+    }
+  }, {
+    "name" : "ReverseProxyHandler",
+    "type" : "ReverseProxyHandler",
+    "config" : {
+      "connectionTimeout" : "60 seconds",
+      "soTimeout" : "unlimited"
+    },
+    "capture" : [ "response", "request" ]
+  }, {
+    "name" : "ForgeRockClientHandler",
+    "type" : "Chain",
+    "config" : {
+      "filters" : [ "TransactionIdOutboundFilter" ],
+      "handler" : "ClientHandler"
+    },
+    "capture" : [ "response", "request" ]
+  } ],
+  "handler" : "ReverseProxyHandler"
+}
